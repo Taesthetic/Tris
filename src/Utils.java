@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Utils {
 
-    public static void permute(List<Integer> testList, int i, int j) {
+    public static <T extends Comparable> void permute(List<T> testList, int i, int j) {
         if (i >= testList.size() && j >= testList.size())
             throw new ArrayIndexOutOfBoundsException();
-        int saved_val = testList.get(i);
+        T saved_val = testList.get(i);
         testList.set(i, testList.get(j));
         testList.set(j, saved_val);
     }
