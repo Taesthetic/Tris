@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 public class FusionSort<T extends Comparable> implements Sort<T> {
@@ -15,12 +16,12 @@ public class FusionSort<T extends Comparable> implements Sort<T> {
     }
 
     private List<T> aux(List<T> list) {
-        if (list.isEmpty())
-            return new ArrayList<T>;
+        if (list.size() <= 1)
+            return new LinkedList<T>();
         return merge(aux(divide_left(list)), aux(divide_right(list)));
     }
 
     public void applyTo(List<T> list) {
-        aux(list);
+        list = divide_left(list);
     }
 }
