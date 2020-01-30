@@ -1,14 +1,15 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class FusionSort<T extends Comparable> implements Sort<T> {
+public class MergeSort<T extends Comparable> implements Sort<T> {
 
     private LinkedList<T> list;
 
-    public FusionSort(List<T> list) {
+    public MergeSort(List<T> list) {
         this.list = new LinkedList<>(list);
     }
 
+    @Override
     public LinkedList<T> getList() {
         return list;
     }
@@ -47,6 +48,7 @@ public class FusionSort<T extends Comparable> implements Sort<T> {
         return merge(leftList, rightList);
     }
 
+    @Override
     public void apply() {
         list = mergeSort(list);
     }

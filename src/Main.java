@@ -18,11 +18,20 @@ public class Main {
         //    System.out.print(" " + value);
 
         System.out.println(testList);
-        //System.out.println(new FusionSort(testList).getMin(new LinkedList(testList)));
-        //new BubbleSort().applyTo(testList);
-        Sort merge = new FusionSort(testList);
+
+
+        Sort bubble = new BubbleSort(testList);
+        bubble.apply();
+
+
+        Sort merge = new MergeSort(testList);
         merge.apply();
+
+
+
+
+        System.out.println(bubble.getList());
         System.out.println(merge.getList());
-        //System.out.println(testList.subList(0, 2));
+
     }
 }
