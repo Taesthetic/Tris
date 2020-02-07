@@ -8,9 +8,6 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
         this.list = new ArrayList<>(list);
     }
 
-
-
-
     @Override
     public void apply() {
         Tree<T> tree = new Tree<>(list);

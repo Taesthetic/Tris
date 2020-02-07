@@ -29,7 +29,6 @@ public class MergeSort<T extends Comparable> implements Sort<T> {
                 retList.add(list1.pollFirst());
             if (list1.peekFirst().compareTo(list2.peekFirst()) >= 0)
                 retList.add(list2.pollFirst());
-
         }
 
         if (!list1.isEmpty())

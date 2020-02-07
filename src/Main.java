@@ -8,36 +8,33 @@ public class Main {
 
         List<Integer> testList = new ArrayList<>(Arrays.asList(10, -4, 2, -3));
         List<Integer> testList2 = new ArrayList<>(Arrays.asList(99, 21, 36, 70, 45));
-
-        //LinkedList<Integer> testList2 = new LinkedList<>(Arrays.asList(1, 2, 3, 4));
+        //LinkedList<Integer> testList3 = new LinkedList<>(Arrays.asList(1, 2, 3, 4));
 
         /*System.out.println(Utils.isSorted(testList));
-        System.out.println(Utils.isSorted2(testList));
+        System.out.println(Utils.isSortedDeprecated(testList));
         System.out.println(Utils.isSorted(testList2));
-        System.out.println(Utils.isSorted2(testList2));*/
+        System.out.println(Utils.isSortedDeprecated(testList2));*/
 
         //for (int value : testList)
         //    System.out.print(" " + value);
 
-        /*System.out.println(testList);
+        System.out.println(testList);
 
 
         Sort bubble = new BubbleSort(testList);
-        bubble.apply();
+        //bubble.apply();
         System.out.println(bubble.getList());
 
         Sort merge = new MergeSort(testList);
-        merge.apply();
+        //merge.apply();
         System.out.println(merge.getList());
 
         Sort heap = new HeapSort(testList);
         heap.apply();
         System.out.println(heap.getList());
 
-
-*/
-        QuickSort quick = new QuickSort(testList2);
-        quick.apply();
+        QuickSort quick = new QuickSort(testList);
+        //quick.apply();
         System.out.println(quick.getList());
     }
 }

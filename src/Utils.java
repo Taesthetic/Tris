@@ -11,14 +11,15 @@ public class Utils {
         testList.set(j, saved_val);
     }
 
-    public static boolean isSorted(List<Integer> testList) {
+    // deprecated because unefficient
+    public static boolean isSortedDeprecated(List<Integer> testList) {
         List<Integer> sortedList = List.copyOf(testList);
         Object[] temp = sortedList.toArray();
         Arrays.sort(temp);
         return Arrays.equals(testList.toArray(), temp);
     }
 
-    public static boolean isSorted2(List<Integer> testList) {
+    public static boolean isSorted(List<Integer> testList) {
         int before = testList.get(0);
         for (int value: testList) {
             if (value < before)

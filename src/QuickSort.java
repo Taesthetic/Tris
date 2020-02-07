@@ -1,31 +1,37 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuickSort<T extends Comparable> implements Sort {
     private List<T> list;
 
     public QuickSort(List<T> list) {
-        this.list = list;
+        this.list = new ArrayList<>(list);
     }
 
-    private int partition(int p, int r) {
-        T pivot = list.get(r);
-        int i = p-1;
-        for (int j = p; j < r ; j++) {
-            if (list.get(j).compareTo(pivot) < 0) {
-                i++;
+    private int getPivot(int premier, int dernier) {
+        return dernier; // premier ne marche pas, pourquoi?
+    }
+
+    private int partition(int premier, int dernier, int pivot) {
+        Utils.permute(list, pivot, dernier);
+        int j = premier;
+        for (int i = premier; i < dernier; i++) {
+            if (list.get(i).compareTo(list.get(pivot)) <= 0) {
                 Utils.permute(list, i, j);
+                j++;
             }
         }
-        Utils.permute(list, i, r);
-        return list.indexOf(pivot);
+        Utils.permute(list, dernier, j);
+        return j;
 
     }
 
-    private void quickSort(int p, int r) {
-        if (p < r) {
-            int q = partition(p,r);
-            quickSort(p, q-1);
-            quickSort(q+1, r);
+    private void quickSort(int premier, int dernier) {
+        if (premier < dernier) {
+            int pivot = getPivot(premier, dernier);
+            pivot = partition(premier, dernier, pivot);
+            quickSort(premier, pivot-1);
+            quickSort(pivot+1, dernier);
         }
     }
 
