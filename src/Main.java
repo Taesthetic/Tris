@@ -39,20 +39,27 @@ public class Main {
         System.out.println(quick.getList());
 
 
-        System.out.println(" " + Utils.getMaj(testList3));
 
-        List<Integer> listStr = new RandomListGenerator<>(4, new Integer[]{3, 2, 10}).getList();
-        //for (Integer value : listStr)
+
+
+        List<String> listStr = new RandomListGenerator<>(80000000, new String[]{"a", "b"}).getList();
+        //for (String value : listStr)
         //    System.out.print(" " + value);
 
+
+        long startTime, endTime, elapsedTime;
+/*
         System.out.println();
-        Sort quick2 = new MergeSort(listStr);
-        long startTime = System.nanoTime();
+        Sort quick2 = new QuickSort(listStr);
+        startTime = System.nanoTime();
         quick2.apply();
-        long endTime = System.nanoTime();
-        long timeElapsed = endTime - startTime;
+        endTime = System.nanoTime();
+        timeElapsed = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + timeElapsed / 1000000);
         //System.out.println(quick2.getList());
+
+
+
 
         Sort bubbleRandom = new BubbleSort(listStr);
         startTime = System.nanoTime();
@@ -61,6 +68,37 @@ public class Main {
         timeElapsed = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + timeElapsed / 1000000);
 
+
+
+
+
+        Boolean isSorted = false;
+        startTime = System.nanoTime();
+        List<String> list_str = bubbleRandom.getList();
+        list_str.add("a");
+        isSorted = Utils.isSortedDeprecated(listStr);
+        endTime = System.nanoTime();
+        timeElapsed = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + timeElapsed / 1000000);
+        System.out.println(isSorted);
+*/
+
+
+
+
+
+
+        startTime = System.nanoTime();
+        System.out.println(" " + Utils.getMaj(listStr));
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
+
+        startTime = System.nanoTime();
+        System.out.println(" " + Utils.getMajNaif(listStr));
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
+
     }
 }
-    
