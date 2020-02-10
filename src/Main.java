@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 
         List<Integer> testList = new ArrayList<>(Arrays.asList(10, -4, 2, -3));
         List<Integer> testList2 = new ArrayList<>(Arrays.asList(99, 21, 36, 70, 45));
-        //LinkedList<Integer> testList3 = new LinkedList<>(Arrays.asList(1, 2, 3, 4));
+        List<Integer> testList3 = new LinkedList<>(Arrays.asList(10000, 9, 10000, 10000, 300));
 
         /*System.out.println(Utils.isSorted(testList));
         System.out.println(Utils.isSortedDeprecated(testList));
@@ -36,5 +37,8 @@ public class Main {
         QuickSort quick = new QuickSort(testList);
         //quick.apply();
         System.out.println(quick.getList());
+
+
+        System.out.print(" " + Utils.getMaj(testList3));
     }
 }
