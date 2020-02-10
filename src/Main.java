@@ -34,11 +34,33 @@ public class Main {
         heap.apply();
         System.out.println(heap.getList());
 
-        QuickSort quick = new QuickSort(testList);
+        Sort quick = new QuickSort(testList);
         //quick.apply();
         System.out.println(quick.getList());
 
 
-        System.out.print(" " + Utils.getMaj(testList3));
+        System.out.println(" " + Utils.getMaj(testList3));
+
+        List<Integer> listStr = new RandomListGenerator<>(4, new Integer[]{3, 2, 10}).getList();
+        //for (Integer value : listStr)
+        //    System.out.print(" " + value);
+
+        System.out.println();
+        Sort quick2 = new MergeSort(listStr);
+        long startTime = System.nanoTime();
+        quick2.apply();
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + timeElapsed / 1000000);
+        //System.out.println(quick2.getList());
+
+        Sort bubbleRandom = new BubbleSort(listStr);
+        startTime = System.nanoTime();
+        bubbleRandom.apply();
+        endTime = System.nanoTime();
+        timeElapsed = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + timeElapsed / 1000000);
+
     }
 }
+    
