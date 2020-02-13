@@ -42,7 +42,7 @@ public class Main {
 
 
 
-        List<String> listStr = new RandomListGenerator<>(80000000, new String[]{"a", "b"}).getList();
+        List<String> listStr = new RandomListGenerator<>(4000000, new String[]{"a", "b", "c"}).getList();
         //for (String value : listStr)
         //    System.out.print(" " + value);
 
@@ -88,17 +88,22 @@ public class Main {
 
 
 
-        /*startTime = System.nanoTime();
+        startTime = System.nanoTime();
         System.out.println(" " + Utils.getMaj(listStr));
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
 
         startTime = System.nanoTime();
-        System.out.println(" " + Utils.getMajNaif(listStr));
+        //System.out.println(" " + Utils.getMajNaif(listStr));
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
-*/
+
+        startTime = System.nanoTime();
+        System.out.println(" " + Utils.getMajRec(listStr));
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
     }
 }

@@ -42,7 +42,7 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
 
     public void heapSort() {
         buildMaxHeap();
-        for (int i = list.size() - 1; i > 0; i++) {
+        for (int i = list.size() - 1; i > 0; i--) {
             Utils.permute(list, i,0);
             heapify(0);
         }
@@ -53,14 +53,14 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
         for (Node<T> node : tree) {
             System.out.println(node.getValue());
             if (node.getLeftChild() != null) // if has child
-                if (isLeaf())
+                if (node.isLeaf())
                     System.out.println(node.getLeftChild().getValue());
             if (node.getRightChild() != null) // if has child
-                if (isLeaf())
+                if (node.isLeaf())
                     System.out.println(node.getRightChild().getValue());
         }
     }
-}
+
 
     public void apply() {
         heapSort();

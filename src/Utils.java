@@ -32,9 +32,10 @@ public class Utils {
     }
 
     public static <T> T getMaj(T[] table) {
-        if (table.length == 0)
+        int listSize = table.length;
+        if (listSize == 0)
             return null;
-        int limit = table.length / 2;
+        int limit = listSize / 2;
         if (limit == 0)
             return table[0];
         Map<T, Integer> map = new HashMap<>();
@@ -49,10 +50,15 @@ public class Utils {
         return null;
     }
 
+    public static <T> T getMaj(List<T> list) {
+        return getMaj((T[]) list.toArray());
+    }
+
     public static <T> T getMajNaif(T[] table) {
-        if (table.length == 0)
+        int listSize = table.length;
+        if (listSize == 0)
             return null;
-        int limit = table.length / 2;
+        int limit = listSize / 2;
         if (limit == 0)
             return table[0];
         int count = 0;
@@ -69,13 +75,47 @@ public class Utils {
         return null;
     }
 
-    public static <T> T getMaj(List<T> list) {
-        return getMaj((T[]) list.toArray());
-    }
-
     public static <T> T getMajNaif(List<T> list) {
         return getMajNaif((T[]) list.toArray());
     }
 
 
+    public static <T> int count(List<T> list, T elt) {
+        int counter = 0;
+        for (T elt2 : list) {
+            if (elt2 == elt)
+                counter++;
+        }
+        return counter;
+    }
+
+    public static <T> T getMajRec(List<T> list) {
+        int listSize = list.size();
+        if (listSize == 0)
+            return null;
+        int limit = listSize / 2;
+        if (limit == 0)
+            return list.get(0);
+        T a = getMajRec(list.subList(0, list.size()/2));
+        T b = getMajRec(list.subList(list.size()/2, list.size()));
+        if (a == null && b == null)
+            return null;
+        if (a == b)
+            return a;
+        if (b == null) {
+            if (count(list, a) > limit)
+                return a;
+            return null;
+        }
+        if (a == null) {
+            if (count(list, b) > limit)
+                return b;
+            return null;
+        }
+        if (count(list, a) > limit)
+            return a;
+        if (count(list, b) > limit)
+            return b;
+        return null;
+    }
 }
