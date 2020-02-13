@@ -34,4 +34,12 @@ public class Node<T> {
     public void setRightChild(Node rightChild) {
         this.rightChild = rightChild;
     }
+
+    public boolean hasChild() {
+        return getLeftChild().getLeftChild() != null || getLeftChild().getRightChild() != null;
+    }
+
+    public boolean isLeaf() {
+        return !hasChild();
+    }
 }

@@ -24,11 +24,11 @@ public class Main {
 
         Sort bubble = new BubbleSort(testList);
         //bubble.apply();
-        System.out.println(bubble.getList());
+        //System.out.println(bubble.getList());
 
         Sort merge = new MergeSort(testList);
         //merge.apply();
-        System.out.println(merge.getList());
+        //System.out.println(merge.getList());
 
         Sort heap = new HeapSort(testList);
         heap.apply();
@@ -36,7 +36,7 @@ public class Main {
 
         Sort quick = new QuickSort(testList);
         //quick.apply();
-        System.out.println(quick.getList());
+        //System.out.println(quick.getList());
 
 
 
@@ -88,7 +88,7 @@ public class Main {
 
 
 
-        startTime = System.nanoTime();
+        /*startTime = System.nanoTime();
         System.out.println(" " + Utils.getMaj(listStr));
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
@@ -99,6 +99,6 @@ public class Main {
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
-
+*/
     }
 }
