@@ -13,7 +13,6 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-
         if (left < list.size()) {
             if (list.get(left).compareTo(list.get(i)) > 0)
                 index = left;
@@ -32,17 +31,15 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
 
 
     public void buildMaxHeap() {
-        int index;
-        index = list.size() / 2;
-        for (int i = index; i >= 0; i--) {
+        int index = list.size() / 2;
+        for (int i = index; i >= 0; i--)
             heapify(i);
-        }
     }
 
 
     public void heapSort() {
         buildMaxHeap();
-        for (int i = list.size() - 1; i > 0; i--) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             Utils.permute(list, i,0);
             heapify(0);
         }
@@ -52,10 +49,10 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
         Tree<T> tree = new Tree<>(list);
         for (Node<T> node : tree) {
             System.out.println(node.getValue());
-            if (node.getLeftChild() != null) // if has child
+            if (node.getLeftChild() != null) // if has left child
                 if (node.isLeaf())
                     System.out.println(node.getLeftChild().getValue());
-            if (node.getRightChild() != null) // if has child
+            if (node.getRightChild() != null) // if has right child
                 if (node.isLeaf())
                     System.out.println(node.getRightChild().getValue());
         }

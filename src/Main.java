@@ -95,7 +95,7 @@ public class Main {
         System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
 
         startTime = System.nanoTime();
-        //System.out.println(" " + Utils.getMajNaif(listStr));
+        System.out.println(" " + Utils.getMajNaif(listStr));
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
         System.out.println("Execution time in milliseconds : " + elapsedTime / 1000000);
